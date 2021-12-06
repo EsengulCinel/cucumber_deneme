@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="1" time="0">
+<testcase classname="ContactUs" name="contacUs sayfasının kontrolu" time="0">
+<skipped><![CDATA[Given website git...........................................................undefined
+And click contactus button..................................................undefined
+And select heading..........................................................undefined
+And type email..............................................................undefined
+And type referance..........................................................undefined
+And type mesaj..............................................................undefined
+When click send button......................................................undefined
+Then verify success mesage..................................................undefined
+]]></skipped>
+</testcase>
+</testsuite>
