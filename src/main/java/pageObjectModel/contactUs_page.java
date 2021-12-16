@@ -1,5 +1,6 @@
 package pageObjectModel;
 
+import cucumber.api.java.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -68,5 +69,14 @@ public class contactUs_page extends abstractClass{
                     Assertion(successMessege,"Your message has been successfully sent to our team.");
 
                 }
+    @After
+    public void driverQuit() throws InterruptedException {
+
+        Thread.sleep(2000);
+        BenimDriverim.quitDriver();
+
+
+    }
+
 }
 

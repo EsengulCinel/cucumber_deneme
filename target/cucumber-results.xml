@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="1" time="0">
-<testcase classname="ContactUs" name="contacUs sayfasının kontrolu" time="0">
-<skipped><![CDATA[Given website git...........................................................undefined
-And click contactus button..................................................undefined
-And select heading..........................................................undefined
-And type email..............................................................undefined
-And type referance..........................................................undefined
-And type mesaj..............................................................undefined
-When click send button......................................................undefined
-Then verify success mesage..................................................undefined
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="3" tests="3" time="0">
+<testcase classname="Register test" name="Kisi1" time="0">
+<skipped><![CDATA[Given Navigate to Website...................................................undefined
+And click sign in button....................................................undefined
+And type email "croselegolas@gmail.com".....................................undefined
+And click on create an account button.......................................undefined
+And type firstname "esen" and lastname "gul"................................undefined
+And type password "deneme123"...............................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Register test" name="Kisi2" time="0">
+<skipped><![CDATA[Given Navigate to Website...................................................undefined
+And click sign in button....................................................undefined
+And type email "croselegolas@gmail.com".....................................undefined
+And click on create an account button.......................................undefined
+And type company "vodafone".................................................undefined
+And type address "Istanbul".................................................undefined
+]]></skipped>
+</testcase>
+<testcase classname="Register test" name="Kisi3" time="0">
+<skipped><![CDATA[Given Navigate to Website...................................................undefined
+And click sign in button....................................................undefined
+And type email "croselegolas@gmail.com".....................................undefined
+And click on create an account button.......................................undefined
+And type firstname "esen" and lastname "cinel"..............................undefined
+And type password "deneme123"...............................................undefined
+And type company "vodafone".................................................undefined
+And type address "istanbul".................................................undefined
 ]]></skipped>
 </testcase>
 </testsuite>

@@ -1,9 +1,12 @@
 package stepDefination;
 
-import cucumber.api.PendingException;
+import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import pageObjectModel.register_page;
 import utilities.BenimDriverim;
@@ -11,18 +14,26 @@ import utilities.BenimDriverim;
 import java.util.concurrent.TimeUnit;
 
 public class Register {
-    private WebDriver driver;
+
 
     register_page register_page=new register_page();  //Register.java
-
+    private WebDriver driver;
     @Given("^Navigate to Website$")
     public void navigate_to_website() throws Throwable {
         driver= BenimDriverim.getDriver();
-        driver.manage().window().maximize();
-        driver.get("http://automationpractice.com/index.php");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-            }
-
+        BenimDriverim.getDriver().manage().window().maximize();
+        BenimDriverim.getDriver().get("http://automationpractice.com/index.php");
+        BenimDriverim.getDriver().manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+    @After
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed() == !true) {
+            final byte[] screenshot = ((TakesScreenshot) driver)
+                    .getScreenshotAs(OutputType.BYTES);
+            scenario.embed(screenshot, "image/png"); //stick it in the report
+        }
+        BenimDriverim.quitDriver();
+    }
     @And("^click sign in button$")
     public void clickSignInButton() {
         register_page.clickOnSignInButton();
@@ -38,6 +49,10 @@ public class Register {
         register_page.clickOnSubmitButton();
     }
 
+    @Then("^exit browser$")
+    public void exitingBrowser() {
+        browserUtil.clickOnSubmitButton();
+    }
     @And("^choose tittle$")
     public void chooseTittle() {
         register_page.selectGender();
